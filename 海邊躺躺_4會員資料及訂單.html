@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="./animate/animate.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+        crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+
+    <title>會員資料 及 訂位資訊｜來去~海邊躺躺</title>
+
+    <style>
+        body {
+            font-family: Arial, "微軟正黑體";
+        }
+
+        #main_content {
+            float: right;
+            padding: 20px;
+            color: #000000;
+            background-color: #effaff;
+        }
+
+        #sidebar {
+            float: left;
+            /* width: 200px; */
+            /* height: 100%; */
+            color: #000000;
+            will-change: max-height;
+            background-color: #5dd6f5;
+            font-size: 16px;
+        }
+
+        #footer {
+            color: #ffffff;
+            background-color: #154c58;
+            /* height: 100px; */
+            padding: 5px 0px;
+            margin: 0px;
+            font-size: 12px;
+        }
+
+        .home_contactIcon {
+            padding: 5px;
+            width: 40px;
+        }
+
+        .main_content__inner {
+            color: #05448b;
+            padding: 10px;
+            /* position: relative; */
+            transform: translate(0, 0);
+            transform: translate3d(0, 0, 0);
+            will-change: position, transform;
+        }
+
+        .main_content__inner a {
+            text-decoration: none;
+            color: #05448b;
+        }
+
+        .main_content__inner:hover {
+            font-weight: bold;
+            padding: 10px;
+            /* position: relative; */
+            transform: translate(0, 0);
+            transform: translate3d(0, 0, 0);
+            will-change: position, transform;
+
+            -webkit-animation-duration: 3s;
+            animation-duration: 3s;
+            -webkit-animation-duration: var(--animate-duration);
+            animation-duration: var(--animate-duration);
+            -webkit-animation-fill-mode: both;
+            animation-fill-mode: both;
+
+            -webkit-animation-name: pulse;
+            animation-name: pulse;
+            -webkit-animation-timing-function: ease-in-out;
+            animation-timing-function: ease-in-out;
+        }
+
+        .main_content__icon {
+            width: 45px;
+        }
+
+        .sidebar__logo {
+            /* padding: 10px 10px; */
+            /* position: relative; */
+            /* transform: translate(0, 0); */
+            /* transform: translate3d(0, 0, 0); */
+            will-change: position, transform;
+        }
+
+        .sidebar__inner {
+            color: #05448b;
+            font-weight: bold;
+            padding: 20px 5px 0px 5px;
+            /* position: relative; */
+            transform: translate(0, 0);
+            transform: translate3d(0, 0, 0);
+            will-change: position, transform;
+        }
+
+        .sidebar__inner:hover {
+            color: #ffffff;
+            text-shadow: 0px 0px 5px #fffabb;
+            padding: 20px 5px 0px 5px;
+            /* position: relative; */
+            transform: translate(0, 0);
+            transform: translate3d(0, 0, 0);
+            will-change: position, transform;
+
+            -webkit-animation-duration: 3s;
+            animation-duration: 3s;
+            -webkit-animation-duration: var(--animate-duration);
+            animation-duration: var(--animate-duration);
+            -webkit-animation-fill-mode: both;
+            animation-fill-mode: both;
+
+            -webkit-animation-name: pulse;
+            animation-name: pulse;
+            -webkit-animation-timing-function: ease-in-out;
+            animation-timing-function: ease-in-out;
+        }
+
+        .sidebar__icon {
+            width: 25px;
+        }
+
+        table {
+            width: 100%;
+            position: relative;
+            /* margin: 0px auto; */
+            border-collapse: collapse;
+            border: 2px solid #05448b;
+            box-sizing: border-box;
+        }
+
+        th {
+            color: white;
+            background-color: #05448b;
+            border: 1px solid #05448b;
+            width: 12em;
+            height: 3em;
+            text-align: left;
+            padding: 0px 20px;
+        }
+
+        td {
+            border: 1px solid #05448b;
+            height: 3em;
+            text-align: left;
+            padding: 0px 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 按一下回到頂端TOP　href="#sidebar" -->
+    <a href="#sidebar">
+        <img class="position-fixed bottom-0 end-0" style="z-index: 1;" src="./_image/icon/top-small-red.png"
+            alt="頂端TOP">
+    </a>
+    <div class="container">
+        <!-- 全頁面 -->
+        <div class="row">
+            <!-- 左邊導覽列 -->
+            <div id="sidebar" class="col-sm-4 col-md-3 col-lg-2">
+                <!-- sidebar_left 導覽列內文-->
+                <ul class="nav nav-pills flex-sm-column flex-row mb-auto justify-content-between text-truncate">
+                    <li class="sidebar__logo">
+                        <a href="Welcome_海邊躺躺.html" class="nav-link text-truncate">
+                            <img src="./image/sidebar/sidebarHome_137x60.png" alt="">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="海邊躺躺_1園區地圖.html" class="nav-link text-truncate sidebar__inner">
+                            <img src="./image/sidebar/garden.png" alt="" class="sidebar__icon">
+                            <span class="d-none d-sm-inline">&nbsp;園區介紹</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="海邊躺躺_2露營區訂位專區.html" class="nav-link text-truncate sidebar__inner">
+                            <img src="./image/sidebar/tent.png" alt="" class="sidebar__icon">
+                            <span class="d-none d-sm-inline">&nbsp;露營區訂位</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="海邊躺躺_3躺躺咖啡屋.html" class="nav-link text-truncate sidebar__inner">
+                            <img src="./image/sidebar/croissant.png" alt="" class="sidebar__icon">
+                            <span class="d-none d-sm-inline">&nbsp;躺躺咖啡屋</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="海邊躺躺_4會員資料及訂單.html" class="nav-link text-truncate sidebar__inner">
+                            <img src="./image/sidebar/list.png" alt="" class="sidebar__icon">
+                            <span class="d-none d-sm-inline">&nbsp;會員/訂位資料</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="海邊躺躺_5會員註冊_會員權益.html" class="nav-link text-truncate sidebar__inner">
+                            <img src="./image/sidebar/login.png" alt="" class="sidebar__icon">
+                            <span class="d-none d-sm-inline">&nbsp;會員登入/申請</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div id="main_content" class="col-sm-8 col-md-9 col-lg-10">
+                <!-- 終於來到了內文專區 -->
+                <!-- 先來標題 -->
+                <h3>會員基本資料 及 訂位資訊</h3>
+                <hr>
+                <!-- 內文區域 -->
+                <div>
+                    <!-- 會員基本及已訂位資料 -->
+                    <div>
+                        <ul class="nav nav-tabs active" id="profile">
+                            <li class="nav-item"><a class="nav-link active" data-bs-toggle="tab" href="#tab1">會員基本資料</a>
+                            </li>
+                            <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#tab2">已訂位資料</a></li>
+                        </ul>
+                        <div class="tab-content" id="memberProfileTab">
+                            <!-- 會員資料tab -->
+                            <div class="tab-pane show active" id="tab1">
+                                <table>
+                                    <tr class="bg-success">
+                                        <th colspan="2" class="text-white">會員帳號　pikachu@gmail.com</th>
+                                    </tr>
+                                    <tr>
+                                        <th>姓　　　名：</th>
+                                        <td>大皮卡</td>
+                                    </tr>
+                                    <tr>
+                                        <th>性　　　別：</th>
+                                        <td>男性</td>
+                                    </tr>
+                                    <tr>
+                                        <th>生日年月日：</th>
+                                        <td>民國100年 01月 01日</td>
+                                    </tr>
+                                    <tr>
+                                        <th>聯絡Email： (認證用)</th>
+                                        <td>pikachu@gmail.com</td>
+                                    </tr>
+                                    <tr>
+                                        <th>聯絡手機：</th>
+                                        <td>0912 - 345678</td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <!-- 訂單資料tab -->
+                            <div class="tab-pane" id="tab2">
+                                <table>
+                                    <tr>
+                                        <th>訂單編號：</th>
+                                        <td>GA20220901022</td>
+                                        <th>訂單成立時間：</th>
+                                        <td>2022-09-01 23:14:17</td>
+                                    </tr>
+                                    <tr class="text-danger">
+                                        <th>訂單聯絡人：</th>
+                                        <td>大皮卡 / 0912 - 345678</td>
+                                        <th>訂單狀態：</th>
+                                        <td>尚未入營</td>
+                                    </tr>
+                                    <tr>
+                                        <th>入營日：</th>
+                                        <td>2022-10-01</td>
+                                        <th>拔營日：</th>
+                                        <td>2022-10-02</td>
+                                    </tr>
+                                    <tr>
+                                        <th>訂單商品項目：</th>
+                                        <td colspan="3">2022-10-01 / A區 - 1帳 - 單價：1000</td>
+                                    </tr>
+                                    <tr>
+                                        <th>訂單總金額：</th>
+                                        <td colspan="3">1000</td>
+                                    </tr>
+                                    <tr>
+                                        <th>付款方式：</th>
+                                        <td colspan="3">信用卡</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <!-- 露營區訂位價目表 -->
+                    <!-- <div>
+                        <h5>【露營區價目表】</h5>
+                        <table id="booking" class="table table-striped text-center">
+                            <tr>
+                                <th>營地區域</th>
+                                <th>帳位總數量</th>
+                                <th>價格</th>
+                            </tr>
+                            <tr>
+                                <td>A區</td>
+                                <td class="text-primary">8</td>
+                                <td class="text-danger">每帳1000元</td>
+                            </tr>
+                            <tr>
+                                <td>B區</td>
+                                <td class="text-primary">5</td>
+                                <td class="text-danger">每帳1000元</td>
+                            </tr>
+                            <tr>
+                                <td>C區 - 2帳包區</td>
+                                <td class="text-primary">1</td>
+                                <td class="text-danger">本區2000元</td>
+                            </tr>
+                            <tr>
+                                <td>D區 - 3帳包區</td>
+                                <td class="text-primary">1</td>
+                                <td class="text-danger">本區3000元</td>
+
+                            </tr>
+                            <tr>
+                                <td>E區 - 5帳包區</td>
+                                <td class="text-primary">1</td>
+                                <td class="text-danger">本區5000元</td>
+
+                            </tr>
+                            <tr>
+                                <td>F區 - 水管小屋2人房</td>
+                                <td class="text-primary">3</td>
+                                <td class="text-danger">每房2500元</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <hr> -->
+                    <!-- 園區須知 -->
+                    <div>
+                        <h5>【園區須知】</h5>
+                        <p>
+                            【營地收費】<br>
+                            收費項目：包含營地停車位、炊事帳位置、清潔費、水電、衛浴及服務費。<br>
+                            收費標準：每一個露營單位【以4人/ 1車 / 1帳篷 / 1炊事帳】為限。<br>
+                            (若需增加露營人數，每人加收 200 元，不分小孩及大人。 訪客，每位訪客酌收 100 元場地清潔費。)<br>
+                            ★ 營帳為神殿、怪獸帳、變形金剛、5 X 8大天幕者請訂2個營位。<br>
+                            ★ 睡車上者視同收一帳4人 900元/ 天計費。<br>
+                            <br>
+                            【露營日當天訂位】<br>
+                            線上查詢當天是否有空位，請電話通知營地管理員 0987-654321 當天進場露營 (現場收費)。<br>
+                            如遇颱風、地震等天災、交通因中斷，經政府或旅客所在地政府發佈停止上班上課，皆可延期或100%退費(如選擇退費訂位者需負擔退款手續費每帳50元/天，退款手續費將從退款金額中扣除)。<br>
+                            <br>
+                            【露營約定】<br>
+                            ★孩童於戲水池戲水皆需家長自行全程陪同遊玩。<br>
+                            ★溪流禁止游泳，孩童溪遊皆需家長自行全程陪同。<br>
+                            ★為維護園區安全，進出營區請減速慢行。<br>
+                            ★為響應環保及不浪費資源，營區內將不提供個人盥洗用品等備品。<br>
+                            ★晚上10:00~早上08:00為管制時段，請勿大聲喧嘩，以免影響其他露友安寧。<br>
+                            ★垃圾請放入垃圾袋內並確實分類，離開前請放置於回收場垃圾桶。<br>
+                            ★化妝室內之馬桶及小便池請勿丟入雜物，以確保暢通。<br>
+                            ★營區內的電源插座僅提供小電補光用，禁止使用高功率電器產品，如電磁爐、暖爐、電鍋、冰箱、烤箱等，如未依規定而使線路燒毀，請照價賠償。<br>
+                            ★營地內嚴禁使用卡拉OK及施放任何型式種類的鞭炮煙火。<br>
+                            ★營區屬開放空間，個人安全/用品/財務請自行負責。<br>
+                            ★如攜帶寵(動)物入營，請將寵(動)物繫上繩圈或放進籠裡，勿讓寵(動)物在營地內自由活動，避免叫聲擾人，並請自行清理排泄物。請勿攜帶有列管、危險性、攻擊性、不受控制的寵(動)物，為維護露友安全，營主保留現場拒絕進入營區之權利。如有傷害他人或損壞他人裝備，請自行負責，與本營區無關。<br>
+                            ★營區屬開放空間，個人安全/用品/財務請自行負責。<br>
+                            ★營區內禁止賭博、吸食毒品及聚眾滋事等一切違法行為，經管理員勸導仍未改善者，將請您主動離開，露營費用沒收不予退還。<br>
+                            ★以上規範為維護露營者之權益，請您配合，違反屢勸不聽者取消露營資格。<br>
+                            ★露營野炊，請特別留意食物衛生與保存，若食用自備餐飲而身體不適，請自行負責。<br>
+                            ★戶外蚊蟲多，請做好防蚊準備，並穿著長袖衣物及長褲，避免蚊蟲叮咬。<br>
+                            ★露宿大自然，請留意野生動物，夜間請避開黑暗處，也不要餵食食物。<br>
+                            ★如您是下雨天不露營者，建議不要提前預訂營位，可於露營日當天確定天氣狀況，適合您露營再電話聯繫營區管理員訂位，以免造成營區與露營者之間的困擾。<br>
+                            ★以上規範為維護露營者之權益，請您配合，違反屢勸不聽者取消露營資格。<br>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <!-- demo頁尾區域 -->
+            <div id="footer" class="d-flex flex-wrap text-white">
+                <div class="col-3 py-4" style="text-align: right;">
+                    <h5>聯絡我們</h5>
+                </div>
+                <div class="col-9 px-5 py-4">
+                    <span>園區位置：台中市大安區圈圈路200號<br>
+                        聯絡電話：(04) 2233-4455<br>
+                        傳真電話：(04) 2266-7788<br>
+                        服務時間：週一～週六 上午10:00～下午7:00</span><br>
+                    <a href=" https://www.facebook.com/" target="_blank">
+                        <img src="https://cdn.discordapp.com/attachments/1029313785917349900/1054314106640924762/icon_facebook.png"
+                            alt="" class="home_contactIcon"></a>
+                    <a href="https://line.me/zh-hant/" target="_blank">
+                        <img src="https://cdn.discordapp.com/attachments/1029313785917349900/1054314686553788476/icon_line.png"
+                            alt="" class="home_contactIcon"></a>
+                    <a href="https://www.youtube.com/" target="_blank">
+                        <img src="https://cdn.discordapp.com/attachments/1029313785917349900/1054314705986007071/icon_youtube.png"
+                            alt="" class="home_contactIcon"></a><br>
+                    <span>© 2022 海邊躺躺 DEMO 教學用途，所有圖片及影片皆為引用，不具商業用途</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        // 「按我~免費加入會員」的泡泡視窗
+        var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
+        var popoverList = popoverTriggerList.map(function (popoverTriggerEl) { return new bootstrap.Popover(popoverTriggerEl) })
+    </script>
+    </div>
+</body>
+
+</html>
