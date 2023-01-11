@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="./animate/animate.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+        crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <title>躺躺咖啡屋｜來去~海邊躺躺</title>
+
+    <style>
+        body {
+            font-family: Arial, "微軟正黑體";
+        }
+
+        #main_content {
+            float: right;
+            padding: 20px;
+            color: #000000;
+            background-color: #effaff;
+        }
+
+        #sidebar {
+            float: left;
+            /* width: 200px; */
+            /* height: 100%; */
+            color: #000000;
+            will-change: max-height;
+            /* background-color: #8ae8ff; */
+            background-color: #5dd6f5;
+            font-size: 16px;
+        }
+
+        #footer {
+            color: #ffffff;
+            background-color: #154c58;
+            /* height: 100px; */
+            padding: 5px 0px;
+            margin: 0px;
+            font-size: 12px;
+        }
+
+        .home_contactIcon {
+            padding: 5px;
+            width: 40px;
+        }
+
+        .main_content__inner {
+            color: #05448b;
+            padding: 10px;
+            /* position: relative; */
+            transform: translate(0, 0);
+            transform: translate3d(0, 0, 0);
+            will-change: position, transform;
+        }
+
+        .main_content__inner a {
+            text-decoration: none;
+            color: #05448b;
+        }
+
+        .main_content__inner:hover {
+            color: #ffffff;
+            text-shadow: 0px 0px 5px #fffabb;
+            padding: 10px;
+            /* position: relative; */
+            transform: translate(0, 0);
+            transform: translate3d(0, 0, 0);
+            will-change: position, transform;
+
+            -webkit-animation-duration: 3s;
+            animation-duration: 3s;
+            -webkit-animation-duration: var(--animate-duration);
+            animation-duration: var(--animate-duration);
+            -webkit-animation-fill-mode: both;
+            animation-fill-mode: both;
+
+            -webkit-animation-name: pulse;
+            animation-name: pulse;
+            -webkit-animation-timing-function: ease-in-out;
+            animation-timing-function: ease-in-out;
+        }
+
+        .main_content__icon {
+            width: 45px;
+        }
+
+        .sidebar__logo {
+            /* padding: 10px 10px; */
+            /* position: relative; */
+            /* transform: translate(0, 0); */
+            /* transform: translate3d(0, 0, 0); */
+            will-change: position, transform;
+        }
+
+        .sidebar__inner {
+            color: #05448b;
+            font-weight: bold;
+            padding: 20px 5px 0px 5px;
+            /* position: relative; */
+            transform: translate(0, 0);
+            transform: translate3d(0, 0, 0);
+            will-change: position, transform;
+        }
+
+        .sidebar__inner:hover {
+            color: #ffffff;
+            text-shadow: 0px 0px 5px #fffabb;
+            padding: 20px 5px 0px 5px;
+            /* position: relative; */
+            transform: translate(0, 0);
+            transform: translate3d(0, 0, 0);
+            will-change: position, transform;
+
+            -webkit-animation-duration: 3s;
+            animation-duration: 3s;
+            -webkit-animation-duration: var(--animate-duration);
+            animation-duration: var(--animate-duration);
+            -webkit-animation-fill-mode: both;
+            animation-fill-mode: both;
+
+            -webkit-animation-name: pulse;
+            animation-name: pulse;
+            -webkit-animation-timing-function: ease-in-out;
+            animation-timing-function: ease-in-out;
+        }
+
+        .sidebar__icon {
+            width: 25px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 按一下回到頂端TOP　href="#sidebar" -->
+    <a href="#sidebar">
+        <img class="position-fixed bottom-0 end-0" style="z-index: 1;" src="./image/topIcon.png" alt="頂端TOP">
+    </a>
+    <div class="container">
+        <!-- 全頁面 -->
+        <div class="row">
+            <!-- 左邊導覽列 -->
+            <div id="sidebar" class="col-sm-4 col-md-3 col-lg-2">
+                <!-- sidebar_left 導覽列內文-->
+                <ul class="nav nav-pills flex-sm-column flex-row mb-auto justify-content-between text-truncate">
+                    <li class="sidebar__logo">
+                        <a href="Welcome_海邊躺躺.html" class="nav-link text-truncate">
+                            <img src="./image/sidebar/sidebarHome_137x60.png" alt="">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="海邊躺躺_1園區地圖.html" class="nav-link text-truncate sidebar__inner">
+                            <img src="./image/sidebar/garden.png" alt="" class="sidebar__icon">
+                            <span class="d-none d-sm-inline">&nbsp;園區介紹</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="海邊躺躺_2露營區訂位專區.html" class="nav-link text-truncate sidebar__inner">
+                            <img src="./image/sidebar/tent.png" alt="" class="sidebar__icon">
+                            <span class="d-none d-sm-inline">&nbsp;露營區訂位</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="海邊躺躺_3躺躺咖啡屋.html" class="nav-link text-truncate sidebar__inner">
+                            <img src="./image/sidebar/croissant.png" alt="" class="sidebar__icon">
+                            <span class="d-none d-sm-inline">&nbsp;躺躺咖啡屋</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="海邊躺躺_4會員資料及訂單.html" class="nav-link text-truncate sidebar__inner">
+                            <img src="./image/sidebar/list.png" alt="" class="sidebar__icon">
+                            <span class="d-none d-sm-inline">&nbsp;會員/訂位資料</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="海邊躺躺_5會員註冊_會員權益.html" class="nav-link text-truncate sidebar__inner">
+                            <img src="./image/sidebar/login.png" alt="" class="sidebar__icon">
+                            <span class="d-none d-sm-inline">&nbsp;會員登入/申請</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div id="main_content" class="col-sm-8 col-md-9 col-lg-10">
+                <!-- 終於來到了內文專區 -->
+                <!-- 先來標題 -->
+                <div class="row">
+                    <div class="col-8">
+                        <h3>躺躺咖啡屋</h3>
+                    </div>
+                    <div class="col-4" style="font-size: 14px; padding: 10px 0px;">
+                        <a class="btn" href="海邊躺躺_5會員註冊_會員權益.html">
+                            <button data-bs-toggle="popover" data-bs-placement="bottom" data-bs-content="按我~免費加入！"
+                                data-bs-trigger="hover">▲還不是會員？▲</button></a>
+                    </div>
+                    <hr>
+                    <!-- 內文區域 -->
+                    <!-- 咖啡屋營業時間說明 -->
+                    <div class="col-12 col-lg-6 py-4">
+                        <p>我們提供手工窯烤PIZZA、長型漢堡、義式咖啡、手沖咖啡，除了葷食外也貼心提供素食用餐者專屬菜單，希望為前來遊玩的你填滿好心情！</p>
+                        <br>
+                        <p>【營業時間🍵】<br>
+                            • 週三～週五 下午03:00～下午09:00<br>
+                            • 週六～週日 上午10:00～下午09:00<br>
+                            • 公休日：週一～週二，遇國定例假日視情況營業，建議可先至打電話向我們確認，避免撲空。</p>
+                    </div>
+                    <div class="col-12 col-lg-6 py-4">
+                        <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+                            <div class="carousel-indicators">
+                                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0"
+                                    class="active" aria-current="true" aria-label="Slide 1"></button>
+                                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1"
+                                    aria-label="Slide 2"></button>
+                                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2"
+                                    aria-label="Slide 3"></button>
+                                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="3"
+                                    aria-label="Slide 4"></button>
+                            </div>
+                            <div class="carousel-inner" style="border-radius: 10px; box-shadow: 0px 0px 5px #bbbbbb;">
+                                <div class="carousel-item active" data-bs-interval="3000">
+                                    <img src="./image/p3/info_pizza.png" class="d-block w-100" alt="輪播">
+                                    <div class="carousel-caption d-none d-md-block">
+                                    </div>
+                                </div>
+                                <div class="carousel-item" data-bs-interval="3000">
+                                    <img src="./image/p3/info_burger.png" class="d-block w-100" alt="輪播">
+                                    <div class="carousel-caption d-none d-md-block">
+                                    </div>
+                                </div>
+                                <div class="carousel-item" data-bs-interval="3000">
+                                    <img src="./image/p3/info_subway.png" class="d-block w-100" alt="輪播">
+                                    <div class="carousel-caption d-none d-md-block">
+                                    </div>
+                                </div>
+                                <div class="carousel-item" data-bs-interval="3000">
+                                    <img src="./image/p3/info_coffee.png" class="d-block w-100" alt="輪播">
+                                    <div class="carousel-caption d-none d-md-block">
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark"
+                                data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark"
+                                data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+                        <br>
+                    </div>
+                    <!-- 咖啡屋菜單 -->
+                    <div class="col-12 col-lg-9 py-4">
+                        <figure>
+                            <img src="./image/p3/meun.png" class="img-fluid figure-img" style="border-radius: 10px; box-shadow: 0px 0px 5px #bbbbbb;">
+                        </figure>
+                    </div>
+                    <!-- 開啟交通和天氣頁面 -->
+                    <div class="row col-12 col-lg-3 py-4">
+                        <div class="col-6 col-lg-12 main_content__inner">
+                            <a href="https://www.google.com.tw/maps/dir//24.3796978,120.5847659/@24.3809585,120.5843942,17.25z/data=!4m2!4m1!3e0?hl=zh-TW"
+                                target="_blank">
+                                <img src="./image/p1/info_traffic.png" alt="交通位置" class="main_content__icon">
+                                <span>交通位置</span>
+                            </a>
+                        </div>
+                        <div class="col-6 col-lg-12 main_content__inner">
+                            <a href="https://www.cwb.gov.tw/V8/C/W/Town/Town.html?TID=6602200" target="_blank">
+                                <img src="./image/p1/info_weather.png" alt="天氣預測" class="main_content__icon">
+                                <span>天氣預測</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- demo頁尾區域 -->
+            <div id="footer" class="d-flex flex-wrap text-white">
+                <div class="col-3 py-4" style="text-align: right;">
+                    <h5>聯絡我們</h5>
+                </div>
+                <div class="col-9 px-5 py-4">
+                    <span>園區位置：台中市大安區圈圈路200號<br>
+                        聯絡電話：(04) 2233-4455<br>
+                        傳真電話：(04) 2266-7788<br>
+                        服務時間：週一～週六 上午10:00～下午7:00</span><br>
+                    <a href=" https://www.facebook.com/" target="_blank">
+                        <img src="https://cdn.discordapp.com/attachments/1029313785917349900/1054314106640924762/icon_facebook.png"
+                            alt="" class="home_contactIcon"></a>
+                    <a href="https://line.me/zh-hant/" target="_blank">
+                        <img src="https://cdn.discordapp.com/attachments/1029313785917349900/1054314686553788476/icon_line.png"
+                            alt="" class="home_contactIcon"></a>
+                    <a href="https://www.youtube.com/" target="_blank">
+                        <img src="https://cdn.discordapp.com/attachments/1029313785917349900/1054314705986007071/icon_youtube.png"
+                            alt="" class="home_contactIcon"></a><br>
+                    <span>© 2022 海邊躺躺 DEMO 教學用途，所有圖片及影片皆為引用，不具商業用途</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        // 「按我~免費加入會員」的泡泡視窗
+        var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
+        var popoverList = popoverTriggerList.map(function (popoverTriggerEl) { return new bootstrap.Popover(popoverTriggerEl) })
+    </script>
+    </div>
+</body>
+
+</html>
