@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="./animate/animate.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+        crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <title>露營區訂位專區｜來去~海邊躺躺</title>
+
+    <style>
+        body {
+            font-family: Arial, "微軟正黑體";
+        }
+
+        #main_content {
+            float: right;
+            padding: 20px;
+            color: #000000;
+            background-color: #effaff;
+        }
+
+        #sidebar {
+            float: left;
+            /* width: 200px; */
+            /* height: 100%; */
+            color: #000000;
+            will-change: max-height;
+            background-color: #5dd6f5;
+            font-size: 16px;
+        }
+
+        #footer {
+            color: #ffffff;
+            background-color: #154c58;
+            /* height: 100px; */
+            padding: 5px 0px;
+            margin: 0px;
+            font-size: 12px;
+        }
+
+        .home_contactIcon {
+            padding: 5px;
+            width: 40px;
+        }
+
+        .main_content__inner {
+            color: #05448b;
+            padding: 10px;
+            /* position: relative; */
+            transform: translate(0, 0);
+            transform: translate3d(0, 0, 0);
+            will-change: position, transform;
+        }
+
+        .main_content__inner a {
+            text-decoration: none;
+            color: #05448b;
+        }
+
+        .main_content__inner:hover {
+            font-weight: bold;
+            padding: 10px;
+            /* position: relative; */
+            transform: translate(0, 0);
+            transform: translate3d(0, 0, 0);
+            will-change: position, transform;
+
+            -webkit-animation-duration: 3s;
+            animation-duration: 3s;
+            -webkit-animation-duration: var(--animate-duration);
+            animation-duration: var(--animate-duration);
+            -webkit-animation-fill-mode: both;
+            animation-fill-mode: both;
+
+            -webkit-animation-name: pulse;
+            animation-name: pulse;
+            -webkit-animation-timing-function: ease-in-out;
+            animation-timing-function: ease-in-out;
+        }
+
+        .main_content__icon {
+            width: 45px;
+        }
+
+        .sidebar__logo {
+            /* padding: 10px 10px; */
+            /* position: relative; */
+            /* transform: translate(0, 0); */
+            /* transform: translate3d(0, 0, 0); */
+            will-change: position, transform;
+        }
+
+        .sidebar__inner {
+            color: #05448b;
+            font-weight: bold;
+            padding: 20px 5px 0px 5px;
+            /* position: relative; */
+            transform: translate(0, 0);
+            transform: translate3d(0, 0, 0);
+            will-change: position, transform;
+        }
+
+        .sidebar__inner:hover {
+            color: #ffffff;
+            text-shadow: 0px 0px 5px #fffabb;
+            padding: 20px 5px 0px 5px;
+            /* position: relative; */
+            transform: translate(0, 0);
+            transform: translate3d(0, 0, 0);
+            will-change: position, transform;
+
+            -webkit-animation-duration: 3s;
+            animation-duration: 3s;
+            -webkit-animation-duration: var(--animate-duration);
+            animation-duration: var(--animate-duration);
+            -webkit-animation-fill-mode: both;
+            animation-fill-mode: both;
+
+            -webkit-animation-name: pulse;
+            animation-name: pulse;
+            -webkit-animation-timing-function: ease-in-out;
+            animation-timing-function: ease-in-out;
+        }
+
+        .sidebar__icon {
+            width: 25px;
+        }
+
+        table {
+            width: 100%;
+            position: relative;
+            /* margin: 0px auto; */
+            border-collapse: collapse;
+            border: 2px solid #05448b;
+            box-sizing: border-box;
+        }
+
+        th {
+            color: white;
+            background-color: #05448b;
+            border: 1px solid #05448b;
+            /* width: 8em; */
+            height: 3em;
+            text-align: center;
+            padding: 0px 20px;
+        }
+
+        td {
+            border: 1px solid #05448b;
+            height: 3em;
+            text-align: left;
+            padding: 0px 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 按一下回到頂端TOP　href="#sidebar" -->
+    <a href="#sidebar">
+        <img class="position-fixed bottom-0 end-0" style="z-index: 1;" src="./image/topIcon.png" alt="頂端TOP">
+    </a>
+    <div class="container">
+        <!-- 全頁面 -->
+        <div class="row">
+            <!-- 左邊導覽列 -->
+            <div id="sidebar" class="col-sm-4 col-md-3 col-lg-2">
+                <!-- sidebar_left 導覽列內文-->
+                <ul class="nav nav-pills flex-sm-column flex-row mb-auto justify-content-between text-truncate">
+                    <li class="sidebar__logo">
+                        <a href="Welcome_海邊躺躺.html" class="nav-link text-truncate">
+                            <img src="./image/sidebar/sidebarHome_137x60.png" alt="">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="海邊躺躺_1園區地圖.html" class="nav-link text-truncate sidebar__inner">
+                            <img src="./image/sidebar/garden.png" alt="" class="sidebar__icon">
+                            <span class="d-none d-sm-inline">&nbsp;園區介紹</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="海邊躺躺_2露營區訂位專區.html" class="nav-link text-truncate sidebar__inner">
+                            <img src="./image/sidebar/tent.png" alt="" class="sidebar__icon">
+                            <span class="d-none d-sm-inline">&nbsp;露營區訂位</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="海邊躺躺_3躺躺咖啡屋.html" class="nav-link text-truncate sidebar__inner">
+                            <img src="./image/sidebar/croissant.png" alt="" class="sidebar__icon">
+                            <span class="d-none d-sm-inline">&nbsp;躺躺咖啡屋</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="海邊躺躺_4會員資料及訂單.html" class="nav-link text-truncate sidebar__inner">
+                            <img src="./image/sidebar/list.png" alt="" class="sidebar__icon">
+                            <span class="d-none d-sm-inline">&nbsp;會員/訂位資料</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="海邊躺躺_5會員註冊_會員權益.html" class="nav-link text-truncate sidebar__inner">
+                            <img src="./image/sidebar/login.png" alt="" class="sidebar__icon">
+                            <span class="d-none d-sm-inline">&nbsp;會員登入/申請</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div id="main_content" class="col-sm-8 col-md-9 col-lg-10">
+                <!-- 終於來到了內文專區 -->
+                <!-- 先來標題 -->
+                <div class="row">
+                    <h3>露營區訂位專區</h3>
+                    <div>
+                        <hr>
+                        <h5>【露營區價目表】</h5>
+                        <div class="text-center">
+                            駐營時間：<input type="date" id="bookingStart" value="">　｜　
+                            拔營時間：<input type="date" id="bookingEnd" value="">
+                            <br>
+                            <br>
+                        </div>
+                        <table id="update-table">
+                            <tr>
+                                <th>序號</th>
+                                <th>營地區域</th>
+                                <th>單價</th>
+                                <th></th>
+                            </tr>
+                            <tr class="update-goods">
+                                <td>1</td>
+                                <td>A區</td>
+                                <td>1000</td>
+                                <td><input type="button" class="update" value="加入預訂清單" /></td>
+                            </tr>
+                            <tr class="update-goods">
+                                <td>2</td>
+                                <td>B區</td>
+                                <td>1000</td>
+                                <td><input type="button" class="update" value="加入預訂清單" /></td>
+                            </tr>
+                            <tr class="update-goods">
+                                <td>3</td>
+                                <td>C區 - 2帳包區</td>
+                                <td>2000</td>
+                                <td><input type="button" class="update" value="加入預訂清單" /></td>
+                            </tr>
+                            <tr class="update-goods">
+                                <td>4</td>
+                                <td>D區 - 3帳包區</td>
+                                <td>3000</td>
+                                <td><input type="button" class="update" value="加入預訂清單" /></td>
+                            </tr>
+                            <tr class="update-goods">
+                                <td>5</td>
+                                <td>E區 - 5帳包區</td>
+                                <td>5000</td>
+                                <td><input type="button" class="update" value="加入預訂清單" /></td>
+                            </tr>
+                            <tr class="update-goods">
+                                <td>6</td>
+                                <td>F區 - 水管小屋2人房</td>
+                                <td>2500</td>
+                                <td><input type="button" class="update" value="加入預訂清單" /></td>
+                            </tr>
+                        </table>
+                        <br>
+                        <hr>
+                        <h5>【預訂營區清單】</h5>
+                        <table id="goods">
+                            <tr>
+                                <th>序號</th>
+                                <th>營地區域</th>
+                                <th>數量</th>
+                                <th>單價</th>
+                                <th>小計</th>
+                                <th>取消</th>
+                            </tr>
+                            <!-- <tr>
+                            <td>1</td>
+                            <td>A區</td>
+                            <td>
+                                <button type="button">-</button>
+                                <span class="goods-num">0</span>
+                                <button type="button">+</button>
+                            </td>
+                            <td>
+                                <span class="goods-price">1000</span>
+                            </td>
+                            <td>
+                                <span class="goods-single-price">0</span>
+                            </td>
+                            <td>
+                                <input type="button" class="deled" value="刪除">
+                            </td>
+                        </tr> -->
+                            <!-- <tr>
+                            <td>2</td>
+                            <td>B區</td>
+                            <td>
+                                <span class="fNsSuzu"></span> <button type="button">-</button>
+                                <span class="goods-num">0</span>
+                                <button type="button">+</button>
+                            </td>
+                            <td>
+                                <span class="goods-price">1000</span>
+                            </td>
+                            <td>
+                                <span class="goods-single-price">0</span>
+                            </td>
+                            <td>
+                                <input type="button" class="deled" value="刪除">
+                            </td>
+                        </tr> -->
+                            <tr>
+                                <td colspan="6" class="bg-primary text-white" style="text-align: center;">
+                                    已選<span id="goods-total-num">0</span>筆，共計費用<span id="goods-total-price">0</span>元。
+                                </td>
+                            </tr>
+                        </table>
+                        <div class="py-2" style="text-align: right;">
+                            <button class="btn btn-danger">來 去 付 款</button>
+                        </div>
+                    </div>
+                    <!-- 內文區域 -->
+                    <!-- 露營區訂位價目表 -->
+                    <br>
+                    <hr>
+                    <!-- 營區地圖 -->
+                    <div class="col-10">
+                        <figure class="figure">
+                            <img src="./image/map1200x800.png" class="img-fluid figure-img ">
+                        </figure>
+                    </div>
+                    <div class="col-2" style="font-size: 14px; padding: 10px 0px;">
+                        <a class="btn" href="海邊躺躺_5會員註冊_會員權益.html">
+                            <button data-bs-toggle="popover" data-bs-placement="bottom" data-bs-content="按我~免費加入！"
+                                data-bs-trigger="hover">▲還不是會員？▲</button></a>
+                    </div>
+                    <br>
+                    <br>
+                    <hr>
+                    <!-- 園區須知 -->
+                    <div>
+                        <h5>【園區須知】</h5>
+                        <p>
+                            【營地收費】<br>
+                            收費項目：包含營地停車位、炊事帳位置、清潔費、水電、衛浴及服務費。<br>
+                            收費標準：每一個露營單位【以4人/ 1車 / 1帳篷 / 1炊事帳】為限。<br>
+                            (若需增加露營人數，每人加收 200 元，不分小孩及大人。 訪客，每位訪客酌收 100 元場地清潔費。)<br>
+                            🔴營帳為神殿、怪獸帳、變形金剛、5 X 8大天幕者請訂2個營位。<br>
+                            🔴睡車上者視同收一帳4人 900元/ 天計費。<br>
+                            <br>
+                            【露營日當天訂位】<br>
+                            線上查詢當天是否有空位，請電話通知營地管理員 0987-654321 當天進場露營 (現場收費)。<br>
+                            如遇颱風、地震等天災、交通因中斷，經政府或旅客所在地政府發佈停止上班上課，皆可延期或100%退費(如選擇退費訂位者需負擔退款手續費每帳50元/天，退款手續費將從退款金額中扣除)。<br>
+                            <br>
+                            【露營約定】<br>
+                            🔴孩童於戲水池戲水皆需家長自行全程陪同遊玩。<br>
+                            🔴溪流禁止游泳，孩童溪遊皆需家長自行全程陪同。<br>
+                            🔴為維護園區安全，進出營區請減速慢行。<br>
+                            🔴為響應環保及不浪費資源，營區內將不提供個人盥洗用品等備品。<br>
+                            🔴晚上10:00~早上08:00為管制時段，請勿大聲喧嘩，以免影響其他露友安寧。<br>
+                            🔴垃圾請放入垃圾袋內並確實分類，離開前請放置於回收場垃圾桶。<br>
+                            🔴化妝室內之馬桶及小便池請勿丟入雜物，以確保暢通。<br>
+                            🔴營區內的電源插座僅提供小電補光用，禁止使用高功率電器產品，如電磁爐、暖爐、電鍋、冰箱、烤箱等，如未依規定而使線路燒毀，請照價賠償。<br>
+                            🔴營地內嚴禁使用卡拉OK及施放任何型式種類的鞭炮煙火。<br>
+                            🔴營區屬開放空間，個人安全/用品/財務請自行負責。<br>
+                            🔴如攜帶寵(動)物入營，請將寵(動)物繫上繩圈或放進籠裡，勿讓寵(動)物在營地內自由活動，避免叫聲擾人，並請自行清理排泄物。請勿攜帶有列管、危險性、攻擊性、不受控制的寵(動)物，為維護露友安全，營主保留現場拒絕進入營區之權利。如有傷害他人或損壞他人裝備，請自行負責，與本營區無關。<br>
+                            🔴營區屬開放空間，個人安全/用品/財務請自行負責。<br>
+                            🔴營區內禁止賭博、吸食毒品及聚眾滋事等一切違法行為，經管理員勸導仍未改善者，將請您主動離開，露營費用沒收不予退還。<br>
+                            🔴以上規範為維護露營者之權益，請您配合，違反屢勸不聽者取消露營資格。<br>
+                            🔴露營野炊，請特別留意食物衛生與保存，若食用自備餐飲而身體不適，請自行負責。<br>
+                            🔴戶外蚊蟲多，請做好防蚊準備，並穿著長袖衣物及長褲，避免蚊蟲叮咬。<br>
+                            🔴露宿大自然，請留意野生動物，夜間請避開黑暗處，也不要餵食食物。<br>
+                            🔴如您是下雨天不露營者，建議不要提前預訂營位，可於露營日當天確定天氣狀況，適合您露營再電話聯繫營區管理員訂位，以免造成營區與露營者之間的困擾。<br>
+                            🔴以上規範為維護露營者之權益，請您配合，違反屢勸不聽者取消露營資格。<br>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <!-- demo頁尾區域 -->
+            <div id="footer" class="d-flex flex-wrap text-white">
+                <div class="col-3 py-4" style="text-align: right;">
+                    <h5>聯絡我們</h5>
+                </div>
+                <div class="col-9 px-5 py-4">
+                    <span>園區位置：台中市大安區圈圈路200號<br>
+                        聯絡電話：(04) 2233-4455<br>
+                        傳真電話：(04) 2266-7788<br>
+                        服務時間：週一～週六 上午10:00～下午7:00</span><br>
+                    <a href=" https://www.facebook.com/" target="_blank">
+                        <img src="https://cdn.discordapp.com/attachments/1029313785917349900/1054314106640924762/icon_facebook.png"
+                            alt="" class="home_contactIcon"></a>
+                    <a href="https://line.me/zh-hant/" target="_blank">
+                        <img src="https://cdn.discordapp.com/attachments/1029313785917349900/1054314686553788476/icon_line.png"
+                            alt="" class="home_contactIcon"></a>
+                    <a href="https://www.youtube.com/" target="_blank">
+                        <img src="https://cdn.discordapp.com/attachments/1029313785917349900/1054314705986007071/icon_youtube.png"
+                            alt="" class="home_contactIcon"></a><br>
+                    <span>© 2022 海邊躺躺 DEMO 教學用途，所有圖片及影片皆為引用，不具商業用途</span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <script>
+        // 帶入日期
+        $(document).ready(function () {
+            var date = new Date();
+
+            var day = date.getDate();
+            var month = date.getMonth() + 1;
+            var year = date.getFullYear();
+
+            if (month < 10) month = "0" + month;
+            if (day < 10) day = "0" + day;
+
+            var today = year + "-" + month + "-" + day;
+            $("#bookingStart").attr("value", today);
+        });
+
+        $(document).ready(function () {
+            var date = new Date();
+
+            var day = date.getDate() + 1;
+            var month = date.getMonth() + 1;
+            var year = date.getFullYear();
+
+            if (month < 10) month = "0" + month;
+            if (day < 10) day = "0" + day;
+
+            var today = year + "-" + month + "-" + day;
+            $("#bookingEnd").attr("value", today);
+        });
+
+        // 加入購物車 及 更新訂單
+        class Cart {
+            constructor() {
+                this.eventBind();
+            }
+            //獲取並更新商品總數量
+            getGoodsNumAndUpdate() {
+                //獲取所有商品的數量
+                let oGoodsNum = document.getElementsByClassName("goods-num");
+                //存放商品數量疊加的總值
+                let goodsTotalNum = 0;
+                //迴圈所有商品
+                for (let i = 0; i < oGoodsNum.length; i++) {
+                    //將所有迴圈到的商品數量相加
+                    goodsTotalNum += Number(oGoodsNum[i].innerHTML);
+                }
+                //獲取總結欄的商品總數
+                let oGoodsTotalNum = document.getElementById("goods-total-num");
+                //將迴圈所得商品數量之和賦給總結欄商品總數
+                oGoodsTotalNum.innerHTML = goodsTotalNum;
+            }
+            //獲取並更新總貨物總價格
+            getGoodsPriceAndUpdate() {
+                //獲取小計
+                let oGoodsSinglePrice = document.getElementsByClassName("goods-single-price");
+                //新<i class="fNsSuzu"></i>建立一個元素接受小計的數值(用於最後賦值給獲取小計的元素)
+                let goodsTotalPrice = 0;
+                //迴圈所有小計
+                for (let i = 0; i < oGoodsSinglePrice.length; i++) {
+                    //將所有迴圈到的小計數量相加
+                    goodsTotalPrice += Number(oGoodsSinglePrice[i].innerHTML);
+                }
+                //獲取總結欄的價格總數
+                let oGoodsTotalPrice = document.getElementById("goods-total-price");
+                //將迴圈所得小計數量之和賦給總結欄價格總數
+                oGoodsTotalPrice.innerHTML = goodsTotalPrice;
+            }
+            //2.獲取小計
+            getSinglePrice(num, price) {
+                //每行小計數等於單價與本行商品之積
+                return num * price;
+            }
+
+            //加號按鈕方法
+            addGoods(btn) {
+                //獲取加號上一個兄弟元素(中間數值)
+                let oGoodsNum = btn.previousElementSibling;
+                //1.點選後數值加一
+                oGoodsNum.innerHTML = Number(oGoodsNum.innerHTML) + 1;
+                //獲取單價(btn父元素的下一個元素的子元素)
+                let oPrice = btn.parentNode.nextElementSibling.firstElementChild;
+                //獲取小計(btn父元素的下一個元素的下一個元素的子元素)
+                let oSinglePrice = btn.parentNode.nextElementSibling.nextElementSibling.firstElementChild;
+                //2.重新獲取小計數值並賦給小計
+                oSinglePrice.innerHTML = this.getSinglePrice(oGoodsNum.innerHTML, oPrice.innerHTML);
+                //3.獲取並更新商品總數量(呼叫重新執行>重新整理資料)
+                this.getGoodsNumAndUpdate();
+                //4.獲取並更新總貨物總價格(呼叫重新執行>重新整理資料)
+                this.getGoodsPriceAndUpdate();
+            }
+            //減號按鈕方法
+            minGoods(btn) {
+                //獲取減號下一個兄弟元素(中間數值)
+                let oGoodsNum = btn.nextElementSibling;
+                //判斷如果商品數量大於零
+                if (oGoodsNum.innerHTML > 0) {
+                    //1.點選後數值減一
+                    oGoodsNum.innerHTML = oGoodsNum.innerHTML - 1;
+                    //獲取單價(btn父元素的下一個元素的子元素)
+                    let oPrice = btn.parentNode.nextElementSibling.firstElementChild;
+                    //獲取小計(btn父元素的下一個元素的下一個元素的子元素)
+                    let oSinglePrice = btn.parentNode.nextElementSibling.nextElementSibling.firstElementChild;
+                    //2.重新獲取小計數值並賦給小計
+                    oSinglePrice.innerHTML = this.getSinglePrice(oGoodsNum.innerHTML, oPrice.innerHTML);
+                    //3.獲取並更新商品總數量(呼叫重新執行>重新整理資料)
+                    this.getGoodsNumAndUpdate();
+                    //4.獲取並更新總貨物總價格(呼叫重新執行>重新整理資料)
+                    this.getGoodsPriceAndUpdate();
+                }
+            }
+            //刪除按鈕方法
+            delGoods(btn) {
+                //獲取購物車table元素
+                let god = document.getElementById("goods");
+                //獲取此按鈕父元素的父元素
+                let oTr = btn.parentNode.parentNode;
+                //然後刪除此元素(在此指按鈕選擇的整個tr元素)
+                oTr.remove();
+                //重新排序號(迴圈名為god的table元素下的所有子元素tr)(從第二個子元素開始,並且去掉最後一個小計行)
+                for (let i = 1; i < god.firstElementChild.children.length - 1; i++) {
+                    //將迴圈之後的元素數值i賦值給名為god的table元素下的子元素tr下的第一個子元素td
+                    god.firstElementChild.children[i].firstElementChild.innerHTML = i;
+                }
+                //3.獲取並更新商品總數量(呼叫重新執行>重新整理資料)
+                this.getGoodsNumAndUpdate();
+                //4.獲取並更新總貨物總價格(呼叫重新執行>重新整理資料)
+                this.getGoodsPriceAndUpdate();
+            }
+
+            //新增訂單方法
+            update() {
+                //獲取所有類名為update的元素
+                let btn = document.getElementsByClassName("update");
+                //獲取所有id名為update-table的元素
+                let updateTable = document.getElementById("update-table");
+                //獲取購物車table元素
+                let god = document.getElementById("goods");
+                //獲取購物車table元素的第一個子元素tbody的所有子元素tr
+                let gods = god.firstElementChild.children;
+                //目標元素賦值為false
+                let flag = false;
+                //這個this是為了避免在事件體內cart的物件被覆蓋
+                let that = this;
+                //迴圈所有類名為update的元素
+                for (let i = 0; i < btn.length; i++) {
+                    //類名為update的點選事件
+                    btn[i].onclick = function () {
+                        //迴圈購物車table元素的第一個子元素tbody的所有子元素tr
+                        for (let j = 0; j < gods.length - 1; j++) {
+                            //迴圈判斷選單中是否有這個菜,如果有這個菜則加1;
+                            //本意為在購物車尋找相同名稱的商品如果有則執行購物車的這條資料商品數量+1;如果沒有則使flag為true跳出判斷
+                            //this是類名為update元素input標籤
+                            //購物車table中所有子元素tr遍歷 下的第一個子元素的內容==類名為update元素input的父元素td的上一個兄弟元素的上一個兄弟元素的內容 時執行
+                            if (gods[j].children[1].innerHTML == this.parentNode.previousElementSibling.previousElementSibling.innerHTML) {
+                                //購物車table中所有子元素tr遍歷 下的第二個子元素的內容(即為購物車中商品的數量)+1
+                                gods[j].children[2].children[1].innerHTML = " " + (Number(gods[j].children[2].children[1].innerHTML) + 1) + " ";
+                                //購物車table中所有子元素tr遍歷 下的第四個子元素的內容(即為購物車中小計的數值被賦值)
+                                gods[j].children[4].innerHTML = '<span class="goods-single-price">' +
+                                    gods[j].children[2].children[1].innerHTML * gods[j].children[3].firstElementChild.innerHTML + '</span>';
+                                //3.獲取並更新商品總數量(呼叫重新執行>重新整理資料)
+                                that.getGoodsNumAndUpdate();
+                                //4.獲取並更新總貨物總價格(呼叫重新執行>重新整理資料)
+                                that.getGoodsPriceAndUpdate();
+                                //給flag賦值為false
+                                flag = false;
+                                //跳出本次迴圈
+                                break;
+                            } else {
+                                //購物車table中所有子元素tr遍歷 下的第一個子元素的內容!=類名為update元素input的父元素td的上一個兄弟元素的上一個兄弟元素的內容 時執行
+                                //賦值給flag為true
+                                flag = true;
+                            }
+                        }
+                        if (flag) {
+                            //如果沒有這個菜則新增
+                            //建立一個節點tr
+                            let tr = document.createElement("tr");
+                            //新增這個節點的內容
+                            tr.innerHTML =
+                                '<td>' + (gods.length - 1) + '</td>' +
+                                '<td>' + this.parentNode.previousElementSibling.previousElementSibling.innerHTML +
+                                '</td><td><button type="button">-</button><span class="goods-num"> 1 </span><button type="button"> +</button></td><td><span class="goods-price">' +
+                                this.parentNode.previousElementSibling.innerHTML +
+                                '</span></td><td><span class="goods-single-price">' +
+                                this.parentNode.previousElementSibling.innerHTML +
+                                '</span></td><td><input type="button" class="deled" value="刪除" /></td>';
+                            //給tbody裡新增新元素
+                            god.firstElementChild.insertBefore(tr, god.firstElementChild.lastElementChild);
+                            //觸發事件按鈕
+                            that.eventBind();
+                            //3.獲取並更新商品總數量(呼叫重新執行>重新整理資料)
+                            that.getGoodsNumAndUpdate();
+                            //4.獲取並更新總貨物總價格(呼叫重新執行>重新整理資料)
+                            that.getGoodsPriceAndUpdate();
+                        }
+                    }
+                    //重新排猜你喜歡裡的商品序號
+                    for (let i = 1; i < updateTable.firstElementChild.children.length; i++) {
+                        //排好的數值賦值給新新增的商品序號值
+                        updateTable.firstElementChild.children[i].firstElementChild.innerHTML = i;
+                    }
+                }
+            }
+
+            //觸發事件按鈕
+            eventBind() {
+                //獲取所有標籤名為botton的按鈕
+                let oBtns = document.getElementsByTagName("button");
+                //這個this是為了避免在事件體內cart的物件被覆蓋
+                let that = this;
+                //迴圈所有botton按鈕
+                for (let i = 0; i < oBtns.length; i++) {
+                    if (i % 2) {//為奇數時觸發addGoods()方法
+                        oBtns[i].onclick = function () {
+                            that.addGoods(this);
+                        }
+                    } else {//為偶數時觸發minGoods()方法
+                        oBtns[i].onclick = function () {
+                            that.minGoods(this);
+                        }
+                    }
+                }
+                //獲取所有類名為deled的元素
+                let oDelBtns = document.getElementsByClassName("deled");
+                //迴圈所有deled元素
+                for (let i = 0; i < oDelBtns.length; i++) {
+                    //deled元素的點選事件
+                    oDelBtns[i].onclick = function () {
+                        //呼叫delGoods()方法執行刪除效果
+                        that.delGoods(this);
+                    }
+                }
+                //呼叫新增訂單
+                this.update();
+            }
+        }
+        let c = new Cart();
+
+        // 「按我~免費加入會員」的泡泡視窗
+        var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
+        var popoverList = popoverTriggerList.map(function (popoverTriggerEl) { return new bootstrap.Popover(popoverTriggerEl) })
+
+
+    </script>
+</body>
+
+</html>
