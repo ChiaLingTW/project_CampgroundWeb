@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./animate/animate.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+        crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <title>Weclome 海邊躺躺</title>
+
+    <style>
+        body {
+            font-family: Arial, "微軟正黑體";
+            background-color: lightblue;
+        }
+
+        .banner {
+            width: 100%;
+            height: 100vh;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .banner video {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            object-fit: cover;
+        }
+
+        .banner img {
+            position: absolute;
+            /* top: 0; */
+            bottom: 50;
+            max-width: 80%;
+            /* height: 100%; */
+            /* font-size: 200px; */
+            text-align: center;
+            /* line-height: 100vh; */
+            /* text-transform:uppercase; */
+            /* background-color: #fff; */
+            mix-blend-mode: normal;
+        }
+
+        .bannerText {
+            position: absolute;
+            /* top: 100; */
+            bottom: 0;
+            width: 100%;
+            background-image: linear-gradient(to top, #ffffff, #ffffffda, #ffffff9f, #ffffff75, #ffffff55, #ffffff40, #ffffff00);
+        }
+
+        #footer {
+            color: #ffffff;
+            background-color: #154c58;
+            /* height: 100px; */
+            padding: 5px 0px;
+            margin: 0px;
+            font-size: 12px;
+        }
+
+        .home_contactIcon {
+            padding: 5px;
+            width: 40px;
+        }
+
+        .home_quickSearch {
+            padding: 10px;
+            position: relative;
+            top: 0%;
+            left: 0%;
+            color: #05448b;
+            font-weight: bold;
+            text-shadow: 0px 0px 3px #ffffff;
+            text-align: center;
+        }
+
+        .home_enterCard {
+            color: #05448b;
+            font-weight: bold;
+            text-align: center;
+            height: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="banner">
+            <video autoplay muted loop>
+                <source src="./video/homevideo.mp4" type="video/mp4">
+            </video>
+            <img src="./_image/homeBigLogo.png" alt="首頁Logo" class="home_bigLogo">
+            <div class="bannerText">
+                <form>
+                    <fieldset class="p-3 home_quickSearch animate__animated animate__fadeInUpBig">
+                        <legend>快速搜尋露營區空位</legend>
+                        <br>
+                        <br>
+                        <div>
+                            <label for="dt">預訂日期：</label><input type="date" name="" id="bookingStart_home">
+                            ｜
+                            <label for="dt">入住天數：</label>
+                            <select>
+                                <option value="">1晚</option>
+                                <option value="">2晚</option>
+                                <option value="">3晚</option>
+                                <option value="">4晚</option>
+                                <option value="">5晚</option>
+                            </select>
+                            <br>
+                            <br>
+                            <a type="button" class="btn bg-warning" href="海邊躺躺_1園區地圖.html">搜&nbsp;&nbsp;尋</a>
+                            </a>
+                        </div>
+                    </fieldset>
+                </form>
+
+                <script>
+                    $(document).ready(function () {
+                        var date = new Date();
+                        
+                        var day = date.getDate();
+                        var month = date.getMonth() + 1;
+                        var year = date.getFullYear();
+                        
+                        if (month < 10) month = "0" + month;
+                        if (day < 10) day = "0" + day;
+                        
+                        var today = year + "-" + month + "-" + day;
+                        console.log(today);
+                        $("#bookingStart_home").attr("value", today);
+                    });
+
+                </script>
+                <!-- 進入Enter咖啡屋及園區介紹 -->
+                <div class="d-flex flex-wrap">
+                    <div class="col-6 home_enterCard animate__animated animate__rotateInDownLeft">
+                        <a type="button" class="btn btn-dark p-3" href="海邊躺躺_3躺躺咖啡屋.html">躺 躺 咖 啡 屋<br>
+                            點我進入➜</a>
+                    </div>
+                    <div class="col-6 home_enterCard animate__animated animate__rotateInDownRight">
+                        <a type="button" class="btn btn-dark p-3" href="海邊躺躺_1園區地圖.html">露 營 區 介 紹<br>
+                            點我進入➜</a>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div id="footer" class="d-flex flex-wrap text-white">
+            <div class="col-3 py-5" style="text-align: right;">
+                <h4>聯絡我們</h4>
+            </div>
+            <div class="col-9 px-5 py-5">
+                <span>園區位置：台中市大安區圈圈路200號<br>
+                    聯絡電話：(04) 2233-4455<br>
+                    傳真電話：(04) 2266-7788<br>
+                    服務時間：週一～週六 上午10:00～下午7:00</span><br>
+                <a href=" https://www.facebook.com/" target="_blank">
+                    <img src="https://cdn.discordapp.com/attachments/1029313785917349900/1054314106640924762/icon_facebook.png"
+                        alt="" class="home_contactIcon"></a>
+                <a href="https://line.me/zh-hant/" target="_blank">
+                    <img src="https://cdn.discordapp.com/attachments/1029313785917349900/1054314686553788476/icon_line.png"
+                        alt="" class="home_contactIcon"></a>
+                <a href="https://www.youtube.com/" target="_blank">
+                    <img src="https://cdn.discordapp.com/attachments/1029313785917349900/1054314705986007071/icon_youtube.png"
+                        alt="" class="home_contactIcon"></a><br>
+                <span>© 2022 海邊躺躺 DEMO 教學用途，所有圖片及影片皆為引用，不具商業用途</span>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
