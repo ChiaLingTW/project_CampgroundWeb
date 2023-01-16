@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="./animate/animate.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+        crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+    <title>新會員權益｜來去~海邊躺躺</title>
+
+    <style>
+        body {
+            font-family: Arial, "微軟正黑體";
+        }
+
+        #main_content {
+            float: right;
+            padding: 20px;
+            color: #000000;
+            background-color: #effaff;
+        }
+
+        #sidebar {
+            float: left;
+            /* width: 200px; */
+            /* height: 100%; */
+            color: #000000;
+            will-change: max-height;
+            background-color: #5dd6f5;
+            font-size: 16px;
+        }
+
+        #footer {
+            color: #ffffff;
+            background-color: #154c58;
+            /* height: 100px; */
+            padding: 5px 0px;
+            margin: 0px;
+            font-size: 12px;
+        }
+
+        .home_contactIcon {
+            padding: 5px;
+            width: 40px;
+        }
+
+        .main_content__inner {
+            color: #05448b;
+            padding: 10px;
+        }
+
+        .main_content__inner a {
+            font-size: 0.85em;
+            text-decoration: none;
+            color: #05448b;
+            animation-duration: 1s;
+        }
+
+        .main_content__inner a:hover {
+            font-size: 1em;
+            font-weight: bold;
+            animation-duration: 1s;
+        }
+
+        .main_content__icon {
+            width: 45px;
+        }
+
+        .sidebar__logo {
+            position: relative;
+            /* transform: translate(0, 0); */
+            /* transform: translate3d(0, 0, 0); */
+            will-change: position, transform;
+        }
+
+        .sidebar__inner {
+            color: #05448b;
+            font-weight: bold;
+            padding: 20px 5px 0px 5px;
+            animation-duration: 1s;
+        }
+
+        .sidebar__inner:hover {
+            color: #ffffff;
+            text-shadow: 0px 0px 5px #fffabb;
+            padding: 20px 0px 0px 0px;
+            animation-duration: 1s;
+        }
+
+        .sidebar__icon {
+            width: 25px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 按一下回到頂端TOP　href="#sidebar" -->
+    <a href="#sidebar">
+        <img class="position-fixed bottom-0 end-0" style="z-index: 1;" src="./image/topIcon.png" alt="頂端TOP">
+    </a>
+    <div class="container">
+        <!-- 全頁面 -->
+        <div class="row">
+            <!-- 左邊導覽列 -->
+            <div id="sidebar" class="col-sm-4 col-md-3 col-lg-2">
+                <!-- sidebar_left 導覽列內文-->
+                <ul class="nav nav-pills flex-sm-column flex-row mb-auto justify-content-between text-truncate">
+                    <li class="sidebar__logo">
+                        <a href="Welcome_海邊躺躺.html" class="nav-link text-truncate">
+                            <img src="./image/sidebar/sidebarHome_137x60.png" alt="">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="海邊躺躺_1園區地圖.html" class="nav-link text-truncate sidebar__inner">
+                            <img src="./image/sidebar/garden.png" alt="" class="sidebar__icon">
+                            <span class="d-none d-sm-inline">&nbsp;園區介紹</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="海邊躺躺_2露營區訂位專區.html" class="nav-link text-truncate sidebar__inner">
+                            <img src="./image/sidebar/tent.png" alt="" class="sidebar__icon">
+                            <span class="d-none d-sm-inline">&nbsp;露營區訂位</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="海邊躺躺_3躺躺咖啡屋.html" class="nav-link text-truncate sidebar__inner">
+                            <img src="./image/sidebar/croissant.png" alt="" class="sidebar__icon">
+                            <span class="d-none d-sm-inline">&nbsp;躺躺咖啡屋</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="海邊躺躺_4會員資料及訂單.html" class="nav-link text-truncate sidebar__inner">
+                            <img src="./image/sidebar/list.png" alt="" class="sidebar__icon">
+                            <span class="d-none d-sm-inline">&nbsp;會員/訂位資料</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="海邊躺躺_5會員註冊_會員權益.html" class="nav-link text-truncate sidebar__inner">
+                            <img src="./image/sidebar/login.png" alt="" class="sidebar__icon">
+                            <span class="d-none d-sm-inline">&nbsp;會員登入/申請</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div id="main_content" class="col-sm-8 col-md-9 col-lg-10">
+                <!-- 終於來到了內文專區 -->
+                <!-- 先來標題 -->
+                <h3> 服務及隱私權政策說明</h3>
+                <hr>
+                <!-- 內文區域 -->
+                <div class="row">
+                    <form name="checkPolicy" action="海邊躺躺_6會員註冊_會員註冊.html">
+                        <h5>請閱讀以下說明：　(<span class="text-danger">*&nbsp;</span>此符號為必填欄位)</h5>
+                        <textarea id="memberBenefits" style="width: 100%; height: 700px;">
+• 當您成為海邊躺躺官方網站（以下簡稱「海邊躺躺」）的會員時，即表示您已詳細閱讀、明確瞭解並同意接受本服務條款之所有內容。
+• 當您使用海邊躺躺的特定服務時，可能會依據該特定服務之性質，而須遵守海邊躺躺所另行公告之服務條款或相關規定。若您為未滿二十歲，應於您的家長（或監護人）閱讀、瞭解並同意本服務條款之所有內容，方得使用本服務。當您使用或繼續使用本服務時，即推定您的家長（或監護人）已閱讀、瞭解並同意接受本服務條款之所有內容及其後修改變更。
+
+【您的註冊義務】
+ 為了能使用本服務，您同意以下事項：
+依本服務註冊頁面之提示提供您本人正確、最新及完整的資料。維持並更新您個人資料，確保其為正確、最新及完整。若您提供任何錯誤或不實的資料，海邊躺躺有權暫停或終止您的帳號，並拒絕您使用本服務之全部或一部份。
+
+【隱私權政策、會員帳號密碼安全】                            
+關於您的會員註冊以及其他特定資料依本公司「隱私權政策」受到保護與規範。
+完成本服務的註冊程序之後，您將擁有一個密碼及帳號。您有責任維持密碼及帳號的機密安全。
+利用該密碼及帳號所進行的一切行為，您將負完全的責任。您並同意以下事項：您的密碼或帳號遭到盜用或有其他任何安全問題發生時，您可立即以電話或電子郵件通知海邊躺躺。
+每次連線完畢，均結束您的帳號使用。
+
+【使用者的守法義務及承諾】
+您承諾絕不為任何非法目的或以任何非法方式使用海邊躺躺，並承諾遵守中華民國相關法規及一切使用網際網路之國際慣例。
+您若係中華民國以外之使用者，並同意遵守所屬國家或地域之法令。
+
+【下列情況發生時本網站無須負擔任何責任】
+• 海邊躺躺官網服務之風險會由您個人承擔，會員同意使用海邊躺躺官網各項服務基於會員的個人意願並同意自付任何風險，包括因為自海邊躺躺官網下載資料或圖片，或是自海邊躺躺官網服務中獲得之資料導致發生任何資源流失等結果。
+• 會員在海邊躺躺官網填寫的物件資料、個人資料、上傳圖片等行為，純屬會員個人行為，官網對其內容之真實性或完整不負任何責任。
+• 任何由於電腦病毒侵入或發作、因政府管制而造成暫時性關閉等影響網路正常經營之不可抗力而造成的資料毀損、丟失、被盜與用或被竄改等官網無關。
+• 海邊躺躺官網就各項服務不負任何明示或默示之擔保責任。海邊躺躺官網不保證各項服務之穩定、安全、無誤及不中斷；會員明示承擔使用官網服務之所有風險極可能發生之任何損害。
+• 維持並更新您個人會員資料，確保其為正確、最新及完整。若您提供任何錯誤、不實或不完整的資料，海邊躺躺有權暫停或終止您的帳號，並拒絕您使用本服務之全部或部分。
+• 對於會員透過海邊躺躺官網刊登或發布虛假、違法資訊、侵害他人權益及欺騙、敲詐行為者，純屬會員個人行為，海邊躺躺官網對此而產生的一切糾紛不負任何責任！
+• 本公司均不負任何明示或默示之擔保或保證責任，您應於會員註冊前或使用本服務前，自行判斷上述風險並自行選擇是否繼續使用本服務，如您完成註冊或繼續使用者，即視為您完全同意本服務條款內所有約定內容。
+• 因本服務之使用所造成之任何直接、間接或衍生性之損害(含所失利益)，本公司均不負任何賠償或補償責任，即使係本公司曾明白提示注意之建議事項亦同，您應於會員註冊前或使用本服務前，自行判斷上述風險並自行選擇是否繼續使用本服務。
+
+【本隱私權政策適用之範圍】
+本隱私權政策及其所包含之告知事項，僅適用於本公司所擁有及經營的網站。本網站內可能包含許多連結、或其他合作夥伴所提供的服務，各連結網站或合作夥伴網站的隱私權聲明及與個人資料保護有關之告知事項，請參閱該連結網站或合作夥伴網站。
+
+【個人資料保護法應告知事項】
+• 蒐集單位：海邊走走
+• 蒐集目的：提供本公司相關服務、行銷、契約、類似契約或其他法律關係事務、客戶管理與服務、網路購物及其他電子商務服務、廣告和商業行為管理業務、以及經營合於營業登記項目或組織章程所定之業務。
+
+【個人資料蒐集】
+• 當您瀏覽本公司經營之相關網站時，不會主動要求輸入個人資料。
+• 當您完成購物流程或參加其他活動時，網站會要求您登錄個人資料，以便完成交易與相關服務。
+• 為了保障各位會員權益，第一次光臨本網站消費的顧客，只要確認完成交易後，即會自動升級為會員。
+• 請確認您所提供的個人資料真實準確，本公司不會承擔您資料中所提供不準確或不完整資訊所造成之損害或錯誤，此 將須自行負責。
+• 如果您拒絕提供個人資料，可能無法充分利用本網站某些服務。
+• 請妥善保管您的會員帳號及密碼，不要將上述資料提供給任何人或允許任何人以您的個人資料申請或使用帳號、密 碼，本公司不會承擔任何不當使用密碼之責任。
+• 如果您與他人共用電腦或使用公共電腦，請記得關閉瀏覽器，以防他人看到上述資料取得您帳號的方法。
+• 訂閱電子報只需提供Email帳號，使用者想取消訂閱，可聯繫相應網站之客服協助取消訂閱。
+ 
+【個人資料類別】
+識別類（姓名、職稱、地址、聯絡電話、電子郵件信箱）、特徵類（年齡、性別、出生年月日等）、其他（為完成收款或付款所需之資料、往來電子郵件、網站留言、系統自動紀錄之軌跡資訊及其他得以直接或間接識別，使用者身分之個人資料等），惟將以實際本公司取得之個人資料為限。
+
+【個人資料利用】
+本網站所蒐集足以識別使用者身分的個人資料，均僅供本網站於其內部、依照蒐集之目的進行處理和利用，除非事先說明、或為完成提供服務或履行合約義務之必要、或依照相關法令規定或有權主管機關之命令或要求，否則本網站不會將足以識別使用者身分的個人資料提供給第三人（包括境內及境外）、或移作蒐集目的以外之使用。本公司金流物流均委託於綠界科技股份有限公司，綠界科技股份有限公司服務之使用所造成之任何直接、間接或衍生性之損害(含所失利益)，本公司均不負任何賠償或補償責任，即使係本公司曾明白提示注意之建議事項亦同，您應於會員註冊前或使用本服務前，自行判斷上述風險並自行選擇是否繼續使用本服務。
+
+【行使個人資料權利方式】
+依個人資料保護法第3條規定，您就您的個人資料享有查詢或請求閱覽、請求製給複製本、請求補充或更正、請求停止蒐集、處理或利用、請求刪除之權利。您可以透過寄送電子郵件至service@xxx_xxx.com
+為避免電子郵件系統漏信或其他原因無法收悉，以本公司回覆收悉為準）方式行使上開權利，本公司將於收悉您的請求後，儘速處理。但因本網站執行職務、業務所必須，以及依相關法令規定，必須存檔備查之交易資料，不在此限。
+
+【個人資料蒐集、處理及利用說明】
+本公司可能透過Facebook或類似社群服務系統，於取得您的同意後，將部分本網站的資訊發布於您的社群活動資訊頁面，若您不同意該等訊息之發布，可與本公司聯絡，本公司將協助您確認、處理相關問題。若您所填寫之送貨地址、聯絡人、聯絡方式等非您本人之個人資料，您同意已取得各該當事人之同意提供予本公司，並已代本公司就前開法定告知事項予以告知。除依法應提供予司法、檢調機關、相關主管機關，或與本公司協力廠商為執行相關活動必要範圍之利用外，本公司將不會任意將您的個人資料提供予第三人。當本公司或本網站全部或部分分割、獨立子公司經營、被其他第三者購併或收購資產，導致經營權轉換時，本公司會於事前將相關細節公告於本網站，且本公司或本網站所擁有之全部或部分使用者資訊亦可能在經營權轉換的狀況下移轉給第三人。惟限於與該經營
+權轉換服務相關之個人資料。若本公司或本網站部分營運移轉予第三人，您仍為本公司會員，若您不希望本公司後續利用您的個人資料，您可以依本隱私權政策向本公司行使權利。
+
+【Cookie】
+為便於日後的辨識，當您使用本網站服務時，本公司可能會在您的電腦上設定與存取Cookie。您可以透過設定您的個人電腦或上網設備，決定是否允許Cookie技術的使用，若您關閉Cookie時，可能會造成您使用本網站服務時之不便利或部分功能限制。
+
+【隱私權政策之修改】
+本公司有權隨時修改本隱私政策及本網站各項內容之權利，將於網站同一位置公告更改聲明外，不會再對會員進行個別通知。若您對本隱私權保護政策有任何問題或不同意該等變更或修改，可利用電子郵件service@xxx_xxx.com
+直接與本公司聯繫或停止使用本網站服務。
+
+溫馨提醒：網際網路並不是一個安全的資訊傳輸環境，請您在使用本網站時，切勿公開透露您個人資料，因該資料有可能會被他人蒐集和使用，特別是網路上公開的發言場合，如聊天室、留言版，更應避免發表個人身份、密碼或電子郵件等相關個人資料。
+</textarea>
+                        <br>
+                        <span class="text-danger">*&nbsp;</span>
+                        <input type="checkbox" required id="checkGOGO" name="checkGOGO"><label
+                            for="checkGOGO">同意上述會員權益</label>
+                        <br>
+                        <br>
+                        <button onclick="nextForm()" class="btn bg-warning">下一步，填寫資料</button>
+                    </form>
+                </div>
+            </div>
+            <!-- demo頁尾區域 -->
+            <div id="footer" class="d-flex flex-wrap text-white">
+                <div class="col-3 py-4" style="text-align: right;">
+                    <h5>聯絡我們</h5>
+                </div>
+                <div class="col-9 px-5 py-4">
+                    <span>園區位置：台中市大安區圈圈路200號<br>
+                        聯絡電話：(04) 2233-4455<br>
+                        傳真電話：(04) 2266-7788<br>
+                        服務時間：週一～週六 上午10:00～下午7:00</span><br>
+                    <a href=" https://www.facebook.com/" target="_blank">
+                        <img src="https://cdn.discordapp.com/attachments/1029313785917349900/1054314106640924762/icon_facebook.png"
+                            alt="" class="home_contactIcon"></a>
+                    <a href="https://line.me/zh-hant/" target="_blank">
+                        <img src="https://cdn.discordapp.com/attachments/1029313785917349900/1054314686553788476/icon_line.png"
+                            alt="" class="home_contactIcon"></a>
+                    <a href="https://www.youtube.com/" target="_blank">
+                        <img src="https://cdn.discordapp.com/attachments/1029313785917349900/1054314705986007071/icon_youtube.png"
+                            alt="" class="home_contactIcon"></a><br>
+                    <span>© 2022 海邊躺躺 DEMO 教學用途，所有圖片及影片皆為引用，不具商業用途</span>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            // 「按我~免費加入會員」的泡泡視窗
+            var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
+            var popoverList = popoverTriggerList.map(function (popoverTriggerEl) { return new bootstrap.Popover(popoverTriggerEl) })
+
+            // 確認是否勾選服務及隱私權政策
+            function nextForm() {
+                if (checkPolicy.checkGOGO.checked == "") {
+                    swal({ title: "未勾選 同意會員優惠訊息通知", button: "確認" });
+                }
+            }
+        </script>
+    </div>
+</body>
+
+</html>

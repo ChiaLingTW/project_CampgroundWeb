@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="./animate/animate.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+        crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+    <title>新會員註冊｜來去~海邊躺躺</title>
+
+    <style>
+        body {
+            font-family: Arial, "微軟正黑體";
+        }
+
+        #main_content {
+            float: right;
+            padding: 20px;
+            color: #000000;
+            background-color: #effaff;
+        }
+
+        #sidebar {
+            float: left;
+            /* width: 200px; */
+            /* height: 100%; */
+            color: #000000;
+            will-change: max-height;
+            background-color: #5dd6f5;
+            font-size: 16px;
+        }
+
+        #footer {
+            color: #ffffff;
+            background-color: #154c58;
+            /* height: 100px; */
+            padding: 5px 0px;
+            margin: 0px;
+            font-size: 12px;
+        }
+
+        .home_contactIcon {
+            padding: 5px;
+            width: 40px;
+        }
+
+        .main_content__inner {
+            color: #05448b;
+            padding: 10px;
+        }
+
+        .main_content__inner a {
+            font-size: 0.85em;
+            text-decoration: none;
+            color: #05448b;
+            animation-duration: 1s;
+        }
+
+        .main_content__inner a:hover {
+            font-size: 1em;
+            font-weight: bold;
+            animation-duration: 1s;
+        }
+
+        .main_content__icon {
+            width: 45px;
+        }
+
+        .sidebar__logo {
+            position: relative;
+            /* transform: translate(0, 0); */
+            /* transform: translate3d(0, 0, 0); */
+            will-change: position, transform;
+        }
+
+        .sidebar__inner {
+            color: #05448b;
+            font-weight: bold;
+            padding: 20px 5px 0px 5px;
+            animation-duration: 1s;
+        }
+
+        .sidebar__inner:hover {
+            color: #ffffff;
+            text-shadow: 0px 0px 5px #fffabb;
+            padding: 20px 0px 0px 0px;
+            animation-duration: 1s;
+        }
+
+        .sidebar__icon {
+            width: 25px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 按一下回到頂端TOP　href="#sidebar" -->
+    <a href="#sidebar">
+        <img class="position-fixed bottom-0 end-0" style="z-index: 1;" src="./image/topIcon.png" alt="頂端TOP">
+    </a>
+    <div class="container">
+        <!-- 全頁面 -->
+        <div class="row">
+            <!-- 左邊導覽列 -->
+            <div id="sidebar" class="col-sm-4 col-md-3 col-lg-2">
+                <!-- sidebar_left 導覽列內文-->
+                <ul class="nav nav-pills flex-sm-column flex-row mb-auto justify-content-between text-truncate">
+                    <li class="sidebar__logo">
+                        <a href="Welcome_海邊躺躺.html" class="nav-link text-truncate">
+                            <img src="./image/sidebar/sidebarHome_137x60.png" alt="">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="海邊躺躺_1園區地圖.html" class="nav-link text-truncate sidebar__inner">
+                            <img src="./image/sidebar/garden.png" alt="" class="sidebar__icon">
+                            <span class="d-none d-sm-inline">&nbsp;園區介紹</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="海邊躺躺_2露營區訂位專區.html" class="nav-link text-truncate sidebar__inner">
+                            <img src="./image/sidebar/tent.png" alt="" class="sidebar__icon">
+                            <span class="d-none d-sm-inline">&nbsp;露營區訂位</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="海邊躺躺_3躺躺咖啡屋.html" class="nav-link text-truncate sidebar__inner">
+                            <img src="./image/sidebar/croissant.png" alt="" class="sidebar__icon">
+                            <span class="d-none d-sm-inline">&nbsp;躺躺咖啡屋</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="海邊躺躺_4會員資料及訂單.html" class="nav-link text-truncate sidebar__inner">
+                            <img src="./image/sidebar/list.png" alt="" class="sidebar__icon">
+                            <span class="d-none d-sm-inline">&nbsp;會員/訂位資料</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="海邊躺躺_5會員註冊_會員權益.html" class="nav-link text-truncate sidebar__inner">
+                            <img src="./image/sidebar/login.png" alt="" class="sidebar__icon">
+                            <span class="d-none d-sm-inline">&nbsp;會員登入/申請</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div id="main_content" class="col-sm-8 col-md-9 col-lg-10">
+                <!-- 終於來到了內文專區 -->
+                <!-- 先來標題 -->
+                <h3>新會員申請及資料填寫</h3>
+                <hr>
+                <!-- 內文區域 -->
+                <div class="row">
+                    <div class="col-12">
+                        <div class="col-12">
+                            <h5>【申請帳號】(<span class="text-danger">*&nbsp;</span>此符號為必填欄位)</h5>
+                            <form name="profile" action="海邊躺躺_4會員資料及訂單.html">
+                                <table class="table table-striped">
+                                    <tr>
+                                        <td><span class="text-danger">*&nbsp;</span>申請會員帳號：</td>
+                                        <td><input type="text" name="account" required></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="text-danger">*&nbsp;</span>登入密碼：</td>
+                                        <td><input type="text" name="password_1" required></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="text-danger">*&nbsp;</span>再次確認密碼：</td>
+                                        <td><input type="text" name="password_2" required></td>
+                                    </tr>
+                                </table>
+                                <hr>
+                                <h5>【基本資料】</h5>
+                                <table class="table table-striped">
+                                    <tr>
+                                        <td><span class="text-danger">*&nbsp;</span>姓　　　名：</td>
+                                        <td><input type="text" id="namename" name="userName" required></td>
+                                    </tr>
+                                    <tr>
+                                        <td>性　　　別：</td>
+                                        <td>
+                                            <input type="radio" id="mele" name="sex"><label for="mele">生理男</label>
+                                            <input type="radio" id="femele" name="sex"><label for="femele">生理女</label>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>生日年月日：</td>
+                                        <td><input type="date" id="birth" name="birthDay"></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="text-danger">*&nbsp;</span>聯絡E mail：　(認證用)</td>
+                                        <td><input type="email" id="mail" name="mailAdd" required></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="text-danger">*&nbsp;</span>聯絡手機：</td>
+                                        <td> <input type="tel" id="phoner" name="phoneNumber"
+                                                oninput="if(value.length>10)value=value.slice(0,10)" required></td>
+                                    </tr>
+                                </table>
+                                <hr>
+                                <h5>會員優惠訊息通知：</h5>
+                                <textarea id="memberBenefits" style="width: 100%; height: 200px;">
+是的，我要享有海邊走走集團關係企業（海邊走走集團各品牌旅行社相關）及受託代銷等各合作廠商之商品或服務等的好康優惠訊息，並接收海邊走走集團關係企業專屬活動電子報的寄送。
+                                    
+【個人資料保護法應告知事項】
+蒐集目的：提供本公司相關服務、行銷、契約、類似契約或其他法律關係事務、客戶管理與服務、網路購物及其他電子商務服務、廣告和商業行為管理業務、以及經營合於營業登記項目或組織章程所定之業務。
+本公司可能透過Facebook或類似社群服務系統，於取得您的同意後，將部分本網站的資訊發布於您的社群活動資訊頁面，若您不同意該等訊息之發布，可與本公司聯絡，本公司將協助您確認、處理相關問題。若您所填寫之送貨地址、聯絡人、聯絡方式等非您本人之個人資料，您同意已取得各該當事人之同意提供予本公司，並已代本公司就前開法定告知事項予以告知。除依法應提供予司法、檢調機關、相關主管機關，或與本公司協力廠商為執行相關活動必要範圍之利用外，本公司將不會任意將您的個人資料提供予第三人。當本公司或本網站全部或部分分割、獨立子公司經營、被其他第三者購併或收購資產，導致經營權轉換時，本公司會於事前將相關細節公告於本網站，且本公司或本網站所擁有之全部或部分使用者資訊亦可能在經營權轉換的狀況下移轉給第三人。惟限於與該經營
+權轉換服務相關之個人資料。若本公司或本網站部分營運移轉予第三人，您仍為本公司會員，若您不希望本公司後續利用您的個人資料，您可以依本隱私權政策向本公司行使權利。
+
+【通知型訊息政策說明】
+本公司/本服務將以通知型訊息傳送重要訊息給您。即使未加入本公司/本服務好友，您仍可接收到通知型訊息。本公司/本服務傳送之通知型訊息以對您有效且重要的訊息為限，以廣告或其他目的的訊息皆不會被傳送。
+滿足以下三個條件者，將可收到通知型訊息。
+(1) LINE 帳號設定的電話號碼與本公司/本服務所傳來的電話號碼比對相符
+(2) 該 LINE 帳號已在 LINE APP 設定中，同意接收通知型訊息
+(3) LINE 帳號未封鎖傳送訊息之 LINE 官方帳號。
+
+欲變更通知型訊息的設定，操作如下：
+(1) 點選「好友」＞「設定」
+(2) 點選「隱私設定」
+(3) 點選「提供使用資料」
+(4) 點選「通知型訊息」
+(5) 開關「接收通知型訊息」。 關閉「接收通知型訊息」後，將不會接收到來自任何企業官方帳號或認證官方帳號的通知型訊息。
+                                </textarea>
+                                <br>
+                                <span class="text-danger">*&nbsp;</span>
+                                <input type="checkbox" name="couponMail" id="coupon" required>
+                                <label for="coupon">我願意收到相關資訊</label>
+                                <br>
+                                <br>
+                                <button onclick="finishClick()" class="btn bg-warning">完成填寫，送出資料</button>
+                                <!-- <input type="submit" onclick="finishClick()" value="完成填寫，送出資料" /> -->
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- demo頁尾區域 -->
+            <div id="footer" class="d-flex flex-wrap text-white">
+                <div class="col-3 py-4" style="text-align: right;">
+                    <h5>聯絡我們</h5>
+                </div>
+                <div class="col-9 px-5 py-4">
+                    <span>園區位置：台中市大安區圈圈路200號<br>
+                        聯絡電話：(04) 2233-4455<br>
+                        傳真電話：(04) 2266-7788<br>
+                        服務時間：週一～週六 上午10:00～下午7:00</span><br>
+                    <a href=" https://www.facebook.com/" target="_blank">
+                        <img src="https://cdn.discordapp.com/attachments/1029313785917349900/1054314106640924762/icon_facebook.png"
+                            alt="" class="home_contactIcon"></a>
+                    <a href="https://line.me/zh-hant/" target="_blank">
+                        <img src="https://cdn.discordapp.com/attachments/1029313785917349900/1054314686553788476/icon_line.png"
+                            alt="" class="home_contactIcon"></a>
+                    <a href="https://www.youtube.com/" target="_blank">
+                        <img src="https://cdn.discordapp.com/attachments/1029313785917349900/1054314705986007071/icon_youtube.png"
+                            alt="" class="home_contactIcon"></a><br>
+                    <span>© 2022 海邊躺躺 DEMO 教學用途，所有圖片及影片皆為引用，不具商業用途</span>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            // 「按我~免費加入會員」的泡泡視窗
+            var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
+            var popoverList = popoverTriggerList.map(function (popoverTriggerEl) { return new bootstrap.Popover(popoverTriggerEl) })
+
+            // 確認會員資料是否填寫，完成跳出完成註冊
+            function finishClick() {
+                var finishForm = "親愛的會員您好！完成註冊！";
+                // console.log(finishForm);
+                if (profile.account.value == "" || profile.password_1.value == "" || profile.password_2.value == "") {
+                    swal({ title: "未完成 申請帳號步驟", button: "確認" });
+                }
+                else if (profile.userName.value == "" || profile.mailAdd.value == "" || profile.phoneNumber.value == "") {
+                    swal({ title: "未填寫 基本資料步驟", button: "確認" });
+                }
+                else if (profile.couponMail.checked == "") {
+                    swal({ title: "未勾選 同意會員優惠訊息通知", button: "確認" });
+                }
+                else { swal({ title: finishForm, icon: "success", button: "確認" }); }
+            }
+        </script>
+    </div>
+</body>
+
+</html>
