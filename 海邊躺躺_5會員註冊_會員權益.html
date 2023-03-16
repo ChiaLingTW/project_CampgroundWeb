@@ -13,6 +13,7 @@
         crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="./js/main.js" defer></script>
 
     <title>新會員權益｜來去~海邊躺躺</title>
 
@@ -260,19 +261,6 @@
                 </div>
             </div>
         </div>
-
-        <script>
-            // 「按我~免費加入會員」的泡泡視窗
-            var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
-            var popoverList = popoverTriggerList.map(function (popoverTriggerEl) { return new bootstrap.Popover(popoverTriggerEl) })
-
-            // 確認是否勾選服務及隱私權政策
-            function nextForm() {
-                if (checkPolicy.checkGOGO.checked == "") {
-                    swal({ title: "未勾選 同意會員優惠訊息通知", button: "確認" });
-                }
-            }
-        </script>
     </div>
 </body>
 

@@ -12,6 +12,7 @@
         integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
         crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="./js/main.js" defer></script>
 
     <title>露營區訂位專區｜來去~海邊躺躺</title>
 
@@ -371,38 +372,9 @@
                 </div>
             </div>
         </div>
-
     </div>
+
     <script>
-        // 帶入日期
-        $(document).ready(function () {
-            var date = new Date();
-
-            var day = date.getDate();
-            var month = date.getMonth() + 1;
-            var year = date.getFullYear();
-
-            if (month < 10) month = "0" + month;
-            if (day < 10) day = "0" + day;
-
-            var today = year + "-" + month + "-" + day;
-            $("#bookingStart").attr("value", today);
-        });
-
-        $(document).ready(function () {
-            var date = new Date();
-
-            var day = date.getDate() + 1;
-            var month = date.getMonth() + 1;
-            var year = date.getFullYear();
-
-            if (month < 10) month = "0" + month;
-            if (day < 10) day = "0" + day;
-
-            var today = year + "-" + month + "-" + day;
-            $("#bookingEnd").attr("value", today);
-        });
-
         // 加入購物車 及 更新訂單
         class Cart {
             constructor() {
@@ -610,12 +582,6 @@
             }
         }
         let c = new Cart();
-
-        // 「按我~免費加入會員」的泡泡視窗
-        var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
-        var popoverList = popoverTriggerList.map(function (popoverTriggerEl) { return new bootstrap.Popover(popoverTriggerEl) })
-
-
     </script>
 </body>
 
